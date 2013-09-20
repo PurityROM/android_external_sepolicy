@@ -5,3 +5,6 @@ type zygote_exec, exec_type, file_type;
 permissive zygote;
 init_daemon_domain(zygote)
 unconfined_domain(zygote)
+
+# The vm compiler needs execute in ashmem
+allow zygote ashmem_device:chr_file rwx_file_perms;
